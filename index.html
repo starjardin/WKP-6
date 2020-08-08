@@ -1,12 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="style.css" />
-		<title>WKP6</title>
-	</head>
-	<body>
-		<script src="script.js"></script>
-	</body>
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="style.css" />
+	<title>WKP6</title>
+	<style>
+		body {
+			max-width: 40rem;
+			margin: auto;
+			text-align: center;
+		}
+
+		h3 {
+			padding-bottom: 3rem;
+		}
+
+		.filterby {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+		}
+
+		.container {
+			display: flex;
+			flex-direction: row;
+			max-width: 40rem;
+			margin-inline-start: auto;
+			margin-inline-end: auto;
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<h2 class="heading">
+			Hungry Studnet Restaurant
+		</h2>
+	</header>
+
+	<main>
+		<div class="container">
+			<div class="container-foodList">
+				<header>
+					<h3>Food List</h3>
+				</header>
+		
+				<div class="filterby">
+					<div>filter by:</div>
+					<div>
+						<input type="checkbox" name="spicy" id="spicy">
+						<label for="sicy">spicy</label>
+					</div>
+					<div>
+						<input type="checkbox" name="vegetarian" id="vegetarian">
+						<label for="vegetarian">vegetarian</label>
+					</div>
+				</div>
+				<ul class="list">
+
+				</ul>
+			</div>
+
+			<div class="food">
+				<header>
+					<h3>Food List</h3>
+				</header>
+
+				
+				<ul class="order-list">
+
+				</ul>
+			</div>
+		</div>
+	</main>
+	<script src="script.js"></script>
+</body>
+
 </html>
