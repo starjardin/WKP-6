@@ -1,0 +1,33 @@
+body {
+  max-width: 40rem;
+  margin: auto;
+}
+
+h2 {
+  padding-bottom: 2rem;
+}
+
+.card {
+  background-color: #999999;
+  padding: 1.5rem;
+  border-radius: 5px;
+}
+
+h3 {
+  padding-bottom: 1.5rem;
+}
+
+.filterby, li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 40rem;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  gap: 3rem;
+}
