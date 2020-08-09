@@ -90,3 +90,14 @@ But this is just one way to think about that. Feel free to try any other logic y
 -   Don't forget to clean your code, and update your readme before Monday morning.
 
 Good luck!
+
+#Readme update
+
+- Fisrt I create the check box in the html, that seems still ok.
+- I create the food list from using map, to loop trough the element to create a list form each element.
+- Next up is the creating listenrs in the checkboxes, if the spicy is checked only show the spicy food === true by using innerHtml and similar to the when the vegetarin is check only show the vegetarian food, finaly when they both are checked only show the matching condition, this step is done after filter from the foods collection and maping the result to create list from yhe result. That seems to be wrking fine so far.
+
+- I had a difficulty with showing the elements from the add button to only shoe them at once and add their number. I wanted to use the reduce method here but I still need to work on that. My plan would have been like this:
+	- every clicks that matches the button is adding one to the * number and use reduce to calculate the total amount for each type of food and use the whole result from thatresult and use reduce to calculate the total food that are added.
+
+- I did not really have time for the modale but I think I would use the total amount of the whole food that get added and to the html.	
