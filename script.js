@@ -61,48 +61,14 @@ const addingFoodList = () => {
   list.innerHTML = listOfFood;
 }
 
-//Handle checkbox
-//See the state of the check box if true or false
-const handleCheckbox = (e) => {
-  
-}
-
-let ordered = []
-const handleAddList = (id) => {
-  let itemRef = foods.find(food => food.id === id);
-  ordered.push(itemRef);
-  const numberOfFood = ordered.reduce((acc, title) => {
-    acc.title ? acc.title++ : acc.title = 1;
-    title = acc.title;
-    return acc
-  }, {});
-  console.log(numberOfFood);
-  const foodPrice = numberOfFood.title
-  let title = itemRef.title;
-  const price = itemRef.price;
-  console.log(price)
-  const foodHtml = `<li>
-      <span>${title}</span>
-      <span>${price}</span>
-    </li>`
-  listOfFood = foodHtml;
-  oderList.insertAdjacentHTML('beforeend', listOfFood);
-};
-
-
-list.addEventListener('click', e => {
-  const id = e.target.value;
-  handleAddList(id)
-})
-
 //Listen to the checkboxes, forEach to loop trough all of the checkboxes
 checkboxes.forEach(checkbox => checkbox.addEventListener('change', e => {
   //if the both are checked and 
   if (spicy.checked && vegetarian.checked) {
     //fileter to get all both spicy and vegetarian are true
-    const vegeSpicy = foods.filter(food => food.vegetarian === true && food.spicy === true);
+    const foodFilteredbyVegAndSpicy = foods.filter(food => food.vegetarian === true && food.spicy === true);
     //map to create html after the filter
-   const vegeSpicyFood = vegeSpicy.map(food => `
+   const vegeSpicyFood = foodFilteredbyVegAndSpicy.map(food => `
     <li value="${food.id}">
       <span>${food.title}</span>
       <span>${food.price}</span>
@@ -112,8 +78,8 @@ checkboxes.forEach(checkbox => checkbox.addEventListener('change', e => {
   list.innerHTML = listOfFood;
   //check if only spicy is checked
   } else if (spicy.checked) {
-    const spicyFood = foods.filter(food => food.spicy === true);
-    const foodSpicy = spicyFood.map(spicy => `
+    const filteredBySpicyFood = foods.filter(food => food.spicy === true);
+    const foodSpicy = filteredBySpicyFood.map(spicy => `
     <li value="${spicy.id}">
       <span>${spicy.title}</span>
       <span>${spicy.price}</span>
@@ -123,8 +89,8 @@ checkboxes.forEach(checkbox => checkbox.addEventListener('change', e => {
   list.innerHTML = listOfFood;
   //check if only vegetarin is checked
   } else if (vegetarian.checked) {
-    const vegetarianFood = foods.filter(food => food.vegetarian === true);
-    const foodVegetarian = vegetarianFood.map(vegetarian => `
+    const foodFilteredByVegetarian = foods.filter(food => food.vegetarian === true);
+    const foodVegetarian = foodFilteredByVegetarian.map(vegetarian => `
     <li value="${vegetarian.id}">
       <span>${vegetarian.title}</span>
       <span>${vegetarian.price}</span>
@@ -136,5 +102,33 @@ checkboxes.forEach(checkbox => checkbox.addEventListener('change', e => {
   } else {
     addingFoodList();
   }
-}))
+}));
+
+let orderedFood = [];
+let hello = [];
+const handleAddList = (id, element) => {
+  let itemRef = foods.find(food => food.id === id);
+  orderedFood.push(itemRef);
+  let title = itemRef.title;
+  const price = itemRef.price;
+
+};
+
+
+list.addEventListener('click', e => {
+  const id = e.target.value;
+  const element = e.target;
+  handleAddList(id, element)
+})
+
+//Calling the fnction to generate the list of foods at the first time the page is not used
 addingFoodList();
+
+// const foodHtml = 
+// `<li>
+//   <span>${title ? title = title : title}</span>
+//   <span>${price}</span>
+// </li>`
+// listOfFood = foodHtml; // This is a variable to store the html
+// console.log(listOfFood)
+// oderList.insertAdjacentHTML('beforeend', listOfFood);
