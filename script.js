@@ -118,6 +118,7 @@ const handleAddList = (id, element) => {
     </li>`
   listOfFood = foodHtml; // This is a variable to store the html
   oderList.insertAdjacentHTML('beforeend', listOfFood);
+  const ul = document.querySelector("ul");
 };
 
 
