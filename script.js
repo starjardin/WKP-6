@@ -111,7 +111,13 @@ const handleAddList = (id, element) => {
   orderedFood.push(itemRef);
   let title = itemRef.title;
   const price = itemRef.price;
-
+  const foodHtml = 
+    `<li>
+      <span>${title ? title = title : title}</span>
+      <span>${price}</span>
+    </li>`
+  listOfFood = foodHtml; // This is a variable to store the html
+  oderList.insertAdjacentHTML('beforeend', listOfFood);
 };
 
 
@@ -123,12 +129,3 @@ list.addEventListener('click', e => {
 
 //Calling the fnction to generate the list of foods at the first time the page is not used
 addingFoodList();
-
-// const foodHtml = 
-// `<li>
-//   <span>${title ? title = title : title}</span>
-//   <span>${price}</span>
-// </li>`
-// listOfFood = foodHtml; // This is a variable to store the html
-// console.log(listOfFood)
-// oderList.insertAdjacentHTML('beforeend', listOfFood);
